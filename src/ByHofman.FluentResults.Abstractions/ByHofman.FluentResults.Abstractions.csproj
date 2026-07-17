@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>ByHofman.FluentResults.Abstractions</PackageId>
+    <Description>Framework-agnostic core for mapping FluentResults errors: category markers, coded-error base, and code/category extensions.</Description>
+    <PackageTags>fluentresults;result;errors;abstractions</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentResults" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

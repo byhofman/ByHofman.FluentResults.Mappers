@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ByHofman.FluentResults.Abstractions/ByHofman.FluentResults.Abstractions.csproj" />
+    <Project Path="src/ByHofman.FluentResults.FastEndpoints/ByHofman.FluentResults.FastEndpoints.csproj" />
+    <Project Path="src/ByHofman.FluentResults.HotChocolate/ByHofman.FluentResults.HotChocolate.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ByHofman.FluentResults.FastEndpoints.Tests/ByHofman.FluentResults.FastEndpoints.Tests.csproj" />
+    <Project Path="tests/ByHofman.FluentResults.HotChocolate.Tests/ByHofman.FluentResults.HotChocolate.Tests.csproj" />
+  </Folder>
+</Solution>

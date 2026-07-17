@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>ByHofman.FluentResults.FastEndpoints</PackageId>
+    <RootNamespace>ByHofman.FluentResults</RootNamespace>
+    <Description>Maps FluentResults Result / Result&lt;T&gt; onto FastEndpoints and ASP.NET Core HTTP responses.</Description>
+    <PackageTags>fluentresults;result;fastendpoints;aspnetcore;problemdetails;http</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="FastEndpoints" Version="8.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ByHofman.FluentResults.Abstractions\ByHofman.FluentResults.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

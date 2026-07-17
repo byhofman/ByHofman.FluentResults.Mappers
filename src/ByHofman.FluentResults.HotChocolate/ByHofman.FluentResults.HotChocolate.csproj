@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>ByHofman.FluentResults.HotChocolate</PackageId>
+    <RootNamespace>ByHofman.FluentResults</RootNamespace>
+    <Description>HotChocolate field middleware that unwraps a FluentResults Result in a resolver and reports failures as GraphQL errors.</Description>
+    <PackageTags>fluentresults;result;hotchocolate;graphql;middleware;errors</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.Types" Version="16.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ByHofman.FluentResults.Abstractions\ByHofman.FluentResults.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
