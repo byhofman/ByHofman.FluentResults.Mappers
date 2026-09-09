@@ -14,3 +14,10 @@ public interface IForbiddenError;
 
 /// <summary>Marks an error as a state conflict (maps to 409).</summary>
 public interface IConflictError;
+
+/// <summary>
+/// Marks a failure as transient — unreachable, timed out, or refused while overloaded (maps to
+/// 503). Without this marker a transient failure falls through to the uncategorized default and
+/// is reported as 400, which tells a caller not to retry something that is worth retrying.
+/// </summary>
+public interface ITransientError;

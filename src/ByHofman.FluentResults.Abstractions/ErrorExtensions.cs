@@ -28,6 +28,7 @@ public static class ErrorExtensions
             IUnauthorizedError => ErrorCategory.Unauthorized,
             IForbiddenError => ErrorCategory.Forbidden,
             IConflictError => ErrorCategory.Conflict,
+            ITransientError => ErrorCategory.Transient,
             _ => ErrorCategory.Failure,
         };
     }
