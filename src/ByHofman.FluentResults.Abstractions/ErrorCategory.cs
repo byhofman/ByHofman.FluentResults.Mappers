@@ -20,4 +20,10 @@ public enum ErrorCategory
 
     /// <summary>The request conflicts with the current state.</summary>
     Conflict,
+
+    // Appended rather than inserted: the members carry implicit ordinals, and renumbering them
+    // would change the meaning of any value already persisted or sent over a wire.
+
+    /// <summary>The failure is temporary and the request is worth retrying.</summary>
+    Transient,
 }

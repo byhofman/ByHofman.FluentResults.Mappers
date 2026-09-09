@@ -56,6 +56,7 @@ public static class ResultHttpMapper
         ErrorCategory.Unauthorized => StatusCodes.Status401Unauthorized,
         ErrorCategory.Forbidden => StatusCodes.Status403Forbidden,
         ErrorCategory.Conflict => StatusCodes.Status409Conflict,
+        ErrorCategory.Transient => StatusCodes.Status503ServiceUnavailable,
         _ => StatusCodes.Status400BadRequest,
     };
 
@@ -66,6 +67,7 @@ public static class ResultHttpMapper
         ErrorCategory.Unauthorized => "Unauthorized",
         ErrorCategory.Forbidden => "Forbidden",
         ErrorCategory.Conflict => "Conflict",
+        ErrorCategory.Transient => "Service unavailable",
         _ => "Request failed",
     };
 

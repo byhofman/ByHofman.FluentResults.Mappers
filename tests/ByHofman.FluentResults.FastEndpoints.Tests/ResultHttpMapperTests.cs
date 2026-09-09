@@ -62,6 +62,25 @@ public class ResultHttpMapperTests
     }
 
     [Fact]
+    public async Task Transient_error_maps_to_503()
+    {
+        var (status, body) = await ExecuteAsync(Result.Fail<int>(new TestTransient()).ToHttpResult());
+
+        Assert.Equal(503, status);
+        Assert.Contains("unavailable", body);
+    }
+
+    [Fact]
+    public async Task Transient_error_does_not_fall_through_to_the_uncategorized_400()
+    {
+        var (transient, _) = await ExecuteAsync(Result.Fail<int>(new TestTransient()).ToHttpResult());
+        var (uncategorized, _) = await ExecuteAsync(Result.Fail<int>("boom").ToHttpResult());
+
+        Assert.Equal(400, uncategorized);
+        Assert.NotEqual(uncategorized, transient);
+    }
+
+    [Fact]
     public async Task Mapped_success_projects_the_value()
     {
         var (status, body) = await ExecuteAsync(Result.Ok(3).ToHttpResult(value => new { doubled = value * 2 }));
@@ -74,3 +93,5 @@ public class ResultHttpMapperTests
 public sealed class TestNotFound() : CodedError("not_found", "missing"), INotFoundError;
 
 public sealed class TestConflict() : CodedError("conflict", "duplicate"), IConflictError;
+
+public sealed class TestTransient() : CodedError("unavailable", "the upstream is unreachable"), ITransientError;

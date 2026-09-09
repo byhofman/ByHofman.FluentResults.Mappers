@@ -3,7 +3,8 @@
 Framework-agnostic core shared by the ByHofman FluentResults mappers.
 
 - **Category markers** — `INotFoundError`, `IValidationError`, `IUnauthorizedError`,
-  `IForbiddenError`, `IConflictError`. Implement them on your `Error` types to give errors meaning.
+  `IForbiddenError`, `IConflictError`, `ITransientError`. Implement them on your `Error` types to
+  give errors meaning.
 - **`CodedError`** — an `Error` base that carries a machine-readable `Code`.
 - **Extensions** — `IError.GetCode()` and `IError.Categorize()`.
 

@@ -27,7 +27,9 @@ public sealed class NotFoundError(string entity, object key)
 ```
 
 `INotFoundError` → 404 / `NOT_FOUND`, `IValidationError` → 400, `IUnauthorizedError` → 401,
-`IForbiddenError` → 403, `IConflictError` → 409. Anything else is a generic failure.
+`IForbiddenError` → 403, `IConflictError` → 409, `ITransientError` → 503. Anything else is a
+generic failure mapped to 400 — so mark a failure that is worth retrying, or a caller is told
+not to.
 
 See each package's README for usage.
 
